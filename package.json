@@ -6,7 +6,7 @@
   "repository": "hyper2/h2dom",
   "license": "MIT",
   "scripts": {
-    "test": "node"
+    "test": ""
   },
   "devDependencies": {
     "tape": "^4.6.3"
