@@ -2,6 +2,7 @@
   "name": "h2dom",
   "description": "Create DOM nodes from h()",
   "author": "Jamen Marz (https://git.io/jamen)",
+  "version": "0.0.0",
   "repository": "hyper2/h2dom",
   "license": "MIT",
   "scripts": {
