@@ -1,0 +1,13 @@
+{
+  "name": "h2dom",
+  "description": "Create DOM nodes from h()",
+  "author": "Jamen Marz (https://git.io/jamen)",
+  "repository": "hyper2/h2dom",
+  "license": "MIT",
+  "scripts": {
+    "test": "node"
+  },
+  "devDependencies": {
+    "tape": "^4.6.3"
+  }
+}
