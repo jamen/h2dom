@@ -18,11 +18,13 @@ module.exports = function h2dom (tag, data, children) {
   }
 
   // Add children nodes
-  if (typeof children === 'string') {
-    node.appendChild(document.createTextNode(children))
-  } else if (children != null) {
-    for (var i = 0, max = children.length; i < max; i++) {
-      node.appendChild(h2dom(children[i]))
+  if (children != null) {
+    if (children.constructor === Array) {
+      for (var i = 0, max = children.length; i < max; i++) {
+        node.appendChild(h2dom(children[i]))
+      }
+    } else {
+      node.appendChild(document.createTextNode(children))
     }
   }
 
