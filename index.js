@@ -19,7 +19,7 @@ module.exports = function h2dom (tag, data, children) {
     if (typeof child === 'string') {
       node.appendChild(document.createTextNode(child))
     } else {
-      node.appendChild(child)
+      node.appendChild(h2dom(child))
     }
   }
 
