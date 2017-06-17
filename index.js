@@ -18,7 +18,7 @@ module.exports = function h2dom (tag, data, children) {
   }
 
   // Add children nodes
-  if (children == null) {
+  if (children != null) {
     for (var i = 0, max = children.length; i < max; i++) {
       var child = children[i]
       if (typeof child === 'string') {
