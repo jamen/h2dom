@@ -14,12 +14,14 @@ module.exports = function h2dom (tag, data, children) {
   }
 
   // Add children nodes
-  for (var i = 0, max = children.length; i < max; i++) {
-    var child = children[i]
-    if (typeof child === 'string') {
-      node.appendChild(document.createTextNode(child))
-    } else {
-      node.appendChild(h2dom(child))
+  if (children == null) {
+    for (var i = 0, max = children.length; i < max; i++) {
+      var child = children[i]
+      if (typeof child === 'string') {
+        node.appendChild(document.createTextNode(child))
+      } else {
+        node.appendChild(h2dom(child))
+      }
     }
   }
 
