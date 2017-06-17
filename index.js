@@ -10,7 +10,11 @@ module.exports = function h2dom (tag, data, children) {
 
   // Set attributes
   for (var attr in data) {
-    node.setAttribute(attr, data[attr])
+    if (data[attr]) {
+      node.setAttribute(attr, data[attr])
+    } else {
+      node.removeAttribute(attr)
+    }
   }
 
   // Add children nodes
