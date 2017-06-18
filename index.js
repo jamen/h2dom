@@ -10,16 +10,21 @@ module.exports = function h2dom (tag, data, children) {
 
   // Set attributes
   for (var attr in data) {
-    node.setAttribute(attr, data[attr])
+    if (data[attr]) {
+      node.setAttribute(attr, data[attr])
+    } else {
+      node.removeAttribute(attr)
+    }
   }
 
   // Add children nodes
-  for (var i = 0, max = children.length; i < max; i++) {
-    var child = children[i]
-    if (typeof child === 'string') {
-      node.appendChild(document.createTextNode(child))
+  if (children != null) {
+    if (children.constructor === Array) {
+      for (var i = 0, max = children.length; i < max; i++) {
+        node.appendChild(h2dom(children[i]))
+      }
     } else {
-      node.appendChild(child)
+      node.appendChild(document.createTextNode(children))
     }
   }
 
