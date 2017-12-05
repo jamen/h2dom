@@ -1,32 +1,16 @@
-
-module.exports = function h2dom (tag, data, children) {
-  if (!children && (typeof data !== 'object' || Array.isArray(data))) {
-    children = data
-    data = null
+module.exports = function h2dom(tag, data, children) {
+  var element = document.createElement(tag)
+  for (var name in data) {
+    var value = data[name]
+    element[name] = value
+    element.setAttribute(name, value)
   }
-
-  // Create DOM node
-  var node = document.createElement(tag)
-
-  // Set attributes
-  for (var attr in data) {
-    if (data[attr]) {
-      node.setAttribute(attr, data[attr])
-    } else {
-      node.removeAttribute(attr)
+  for (var i = 0; i < children.length; i++) {
+    var child = children[i]
+    if (typeof child === "string") {
+      child = document.createTextNode(child)
     }
+    element.appendChild(child)
   }
-
-  // Add children nodes
-  if (children != null) {
-    if (children.constructor === Array) {
-      for (var i = 0, max = children.length; i < max; i++) {
-        node.appendChild(h2dom(children[i]))
-      }
-    } else {
-      node.appendChild(document.createTextNode(children))
-    }
-  }
-
-  return node
+  return element
 }
