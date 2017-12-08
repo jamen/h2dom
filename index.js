@@ -5,12 +5,14 @@ module.exports = function h2dom(tag, data, children) {
     element[name] = value
     element.setAttribute(name, value)
   }
-  for (var i = 0; i < children.length; i++) {
-    var child = children[i]
-    if (typeof child === "string") {
-      child = document.createTextNode(child)
+  if (children) {
+    for (var i = 0; i < children.length; i++) {
+      var child = children[i]
+      if (typeof child === "string") {
+        child = document.createTextNode(child)
+      }
+      element.appendChild(child)
     }
-    element.appendChild(child)
   }
   return element
 }
