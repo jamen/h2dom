@@ -24,9 +24,9 @@ npm i h2dom
 
 ## Usage
 
-### `h(tag, data?, children?)`
-
 [This function follows the h2spec guidelines.](https://github.com/hyper2/h2spec)
+
+### `h(tag, data?, children?)`
 
 + `tag`: the element name passed to `document.createElement(name)`
 + `data` (optional): an object containing the attributes to set on the element
