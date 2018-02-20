@@ -1,8 +1,8 @@
 {
   "name": "h2dom",
-  "description": "Create DOM nodes from h()",
+  "description": "Create DOM nodes using h functions",
   "author": "Jamen Marz (https://git.io/jamen)",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "repository": "hyper2/h2dom",
   "license": "MIT",
   "scripts": {

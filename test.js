@@ -5,7 +5,7 @@ test('creates DOM node', function (t) {
   t.plan(1)
 
   var node = h('div', { class: 'foo' }, [
-    h('span', null, [ 'foo' ]),
+    h('span', null, 'foo'),
     ' bar'
   ])
 
