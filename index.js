@@ -1,4 +1,5 @@
-module.exports = function h2dom(tag, data, children) {
+
+function h2dom (tag, data, children) {
   var element = document.createElement(tag)
   for (var name in data) {
     var value = data[name]
@@ -8,7 +9,7 @@ module.exports = function h2dom(tag, data, children) {
   if (children) {
     for (var i = 0; i < children.length; i++) {
       var child = children[i]
-      if (typeof child === "string") {
+      if (typeof child === 'string') {
         child = document.createTextNode(child)
       }
       element.appendChild(child)
@@ -16,3 +17,5 @@ module.exports = function h2dom(tag, data, children) {
   }
   return element
 }
+
+export { h2dom }
